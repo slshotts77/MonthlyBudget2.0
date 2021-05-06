@@ -15,8 +15,9 @@ namespace MonthlyBudget.Data
         [Required]
         public Guid OwnerId { get; set; }
         [Required]
-        
         public string DescriptionName { get; set; }
+        public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
 
         public virtual ICollection<Checking> Entries { get; set; } = new List<Checking>();
     }

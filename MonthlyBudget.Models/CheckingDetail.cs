@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,37 +9,28 @@ namespace MonthlyBudget.Models
 {
     public class CheckingDetail
     {
-        public int CheckingId { get; set; }
-
-        [Display(Name = "Description of expenditure")]
         public string CheckingName { get; set; }
-
-        [Display(Name = "Check if this a mothly bill")]
+        [Display(Name = "Reoccuring?")]
         public bool MonthlyBill { get; set; }
-
-        [Display(Name = "Date of purchase")]
-        public String ChargeDate { get; set; }
-        [Display(Name = "Date cleared with bank")]
-        public String DateCleared { get; set; }
-        [Display(Name = "Check if cleared with the bank")]
+        [Required]
+        [Display(Name = "Purchase Date")]
+        public string ChargeDate { get; set; }
+        [Display(Name = "Date Bank Cleared")]
+        public string DateCleared { get; set; }
+        [Display(Name = "Bank Note Cleared")]
         public bool Cleared { get; set; }
 
-        //public virtual ICollection<CheckingListItem> ListOfEntries { get; set; } = new List<CheckingListItem>();
 
-        [Display(Name = "Created")]
-        public DateTimeOffset CreatedUtc { get; set; }
-        [Display(Name = "Modified")]
-        public DateTimeOffset? ModifiedUtc { get; set; }
+        [Required]
+        public int UtilityCompanyId { get; set; }
 
+        [Required]
+        public int CategoryId { get; set; }
 
-        public string UtilityComapny { get; set; }
+        [Required]
+        public int DescriptionId { get; set; }
 
-        public string Category { get; set; }
-
-        public string Description { get; set; }
-
-        public string PayingBy { get; set; }
-
-
+        [Required]
+        public int PayingById { get; set; }
     }
 }
