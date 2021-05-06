@@ -9,10 +9,9 @@ namespace MonthlyBudget.Models
 {
     public class UtilityCompanyDetail
     {
-        
         public int UtilityCompanyId { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string UtilityName { get; set; }
         [Required]
         [Display(Name = "www.what.com")]
         public string Website { get; set; }
@@ -23,12 +22,12 @@ namespace MonthlyBudget.Models
         [Required]
         [Display(Name = "(123) 555-1234")]
         public string PhoneNumber { get; set; }
-        
-        public List<UtilityCompanyListItem> Entries { get; set; }
-
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
+
+
+        public List<CheckingListItem> Entries { get; set; }
     }
 }

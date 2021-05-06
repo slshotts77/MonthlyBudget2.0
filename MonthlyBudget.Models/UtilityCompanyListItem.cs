@@ -11,17 +11,20 @@ namespace MonthlyBudget.Models
     {
         public int UtilityCompanyId { get; set; }
         [Display(Name = "Utility Company Name")]
-        public string Name { get; set; }
+        public string UtilityName { get; set; }
         [Display(Name = "www.what.com")]
         public string Website { get; set; }
         public string UserLogin { get; set; }
         public string UserPassword { get; set; }
         [Display(Name = "(123) 555-1234")]
         public string PhoneNumber { get; set; }
-        
-        [Display(Name = "Created")]
-        public DateTimeOffset CreatedUtc { get; set; }
-        [Display(Name = "Modified")]
-        public DateTimeOffset? ModifiedUtc { get; set; }
+
+        public string UtilityComapny { get; set; }
+
+        public string Category { get; set; }
+
+        public string Description { get; set; }
+
+        public string PayingBy { get; set; }
     }
 }

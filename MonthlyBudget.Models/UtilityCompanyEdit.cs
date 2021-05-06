@@ -9,8 +9,9 @@ namespace MonthlyBudget.Models
 {
     public class UtilityCompanyEdit
     {
+        public int UtilityCompanyId { get; set; }
         [Display(Name = "Utility Company Name")]
-        public string Name { get; set; }
+        public string UtilityName { get; set; }
         [Display(Name = "www.what.com")]
         public string Website { get; set; }
         public string UserLogin { get; set; }

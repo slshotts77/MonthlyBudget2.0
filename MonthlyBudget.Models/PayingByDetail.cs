@@ -17,12 +17,14 @@ namespace MonthlyBudget.Models
         public string CardType { get; set; }
         public decimal CardNumber { get; set; }
         public string NameOnCard { get; set; }
-        public DateTime ExpirationDate { get; set; }
+        public string ExpirationDate { get; set; }
         [Display(Name = "3 digit code on the back of the card")]
         public int SecurityCode { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Modified")]
-        public DateTimeOffset? ModifiedUtc { get; set; }
+        public DateTimeOffset ModifiedUtc { get; set; }
+
+        public List<CheckingListItem> Entries { get; set; }
     }
 }

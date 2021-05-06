@@ -9,12 +9,9 @@ namespace MonthlyBudget.Models
 {
     public class DescriptionCreate
     {
-        [Display(Name = "Description of purchase")]
+        [Display(Name = "Expense Description")]
+        [MinLength(10, ErrorMessage = "Please enter at least 3 characters.")]
+        [MaxLength(50, ErrorMessage = "Enter shorter name.")]
         public string DescriptionName { get; set; }
-
-        [Display(Name = "Created")]
-        public DateTimeOffset CreatedUtc { get; set; }
-        [Display(Name = "Modified")]
-        public DateTimeOffset ModifiedUtc { get; set; }
     }
 }

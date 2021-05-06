@@ -9,10 +9,9 @@ namespace MonthlyBudget.Models
 {
     public class CheckingCreate
     {
-        [Required]
-        [Display(Name = "Checking Registry")]
-        [MinLength(3, ErrorMessage = "Please enter at least 3 characters.")]
-        [MaxLength(25, ErrorMessage = "Enter shorter name.")]
+        [Display(Name = "Expense Description")]
+        [MinLength(5, ErrorMessage = "Please enter at least 3 characters.")]
+        [MaxLength(50, ErrorMessage = "Enter shorter name.")]
         public string CheckingName { get; set; }
         [Display(Name = "Reoccuring?")]
         public bool MonthlyBill { get; set; }
@@ -21,7 +20,7 @@ namespace MonthlyBudget.Models
         public string ChargeDate { get; set; }
         [Display(Name = "Date Bank Cleared")]
         public string DateCleared { get; set; }
-        [Display(Name = "Has Note Cleared")]
+        [Display(Name = "Bank Note Cleared")]
         public bool Cleared { get; set; }
 
 

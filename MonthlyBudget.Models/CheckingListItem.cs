@@ -11,23 +11,17 @@ namespace MonthlyBudget.Models
     public class CheckingListItem
     {
         public int CheckingId { get; set; }
-
-        [Display(Name = "Description of expenditure")]
+        [Display(Name = "Checking Name")]
         public string CheckingName { get; set; }
-
-        [Display(Name = "Check if this a mothly bill")]
+        [Display(Name = "Reoccuring?")]
         public bool MonthlyBill { get; set; }
-      
         [Display(Name = "Date of purchase")]
         public String ChargeDate { get; set; }
         [Display(Name = "Date cleared with bank")]
         public String DateCleared { get; set; }
         [Display(Name = "Check if cleared with the bank")]
         public bool Cleared { get; set; }
-        [Display(Name = "Created")]
-        public DateTimeOffset CreatedUtc { get; set; }
-        [Display(Name = "Modified")]
-        public DateTimeOffset ModifiedUtc { get; set; }
+
 
         public string UtilityComapny { get; set; }
 
