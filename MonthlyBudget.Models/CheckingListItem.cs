@@ -24,7 +24,6 @@ namespace MonthlyBudget.Models
         public String DateCleared { get; set; }
         [Display(Name = "Check if cleared with the bank")]
         public bool Cleared { get; set; }
-        
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Modified")]
