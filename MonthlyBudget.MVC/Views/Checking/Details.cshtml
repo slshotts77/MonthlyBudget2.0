@@ -1,0 +1,114 @@
+﻿@model MonthlyBudget.Models.CheckingDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CheckingDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckingId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckingId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckingName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckingName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MonthlyBill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MonthlyBill)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChargeDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChargeDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCleared)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCleared)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cleared)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cleared)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UtilityComapny)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UtilityComapny)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PayingBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PayingBy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CheckingId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

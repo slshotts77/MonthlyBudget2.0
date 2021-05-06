@@ -240,14 +240,34 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
+    <Content Include="Views\Checking\Index.cshtml" />
+    <Content Include="Views\Checking\Details.cshtml" />
+    <Content Include="Views\Checking\Create.cshtml" />
+    <Content Include="Views\Checking\Edit.cshtml" />
+    <Content Include="Views\Checking\Delete.cshtml" />
+    <Content Include="Views\Description\Index.cshtml" />
+    <Content Include="Views\Description\Create.cshtml" />
+    <Content Include="Views\Description\Details.cshtml" />
+    <Content Include="Views\Description\Edit.cshtml" />
+    <Content Include="Views\Description\Delete.cshtml" />
+    <Content Include="Views\PayingBy\Index.cshtml" />
+    <Content Include="Views\PayingBy\Create.cshtml" />
+    <Content Include="Views\PayingBy\Details.cshtml" />
+    <Content Include="Views\PayingBy\Edit.cshtml" />
+    <Content Include="Views\PayingBy\Delete.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Delete.cshtml" />
+    <Content Include="Views\UtilityCompany\Index.cshtml" />
+    <Content Include="Views\UtilityCompany\Create.cshtml" />
+    <Content Include="Views\UtilityCompany\Details.cshtml" />
+    <Content Include="Views\UtilityCompany\Edit.cshtml" />
+    <Content Include="Views\UtilityCompany\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Category\" />
-    <Folder Include="Views\Checking\" />
-    <Folder Include="Views\Description\" />
-    <Folder Include="Views\PayingBy\" />
-    <Folder Include="Views\UtilityCompany\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

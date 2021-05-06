@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MonthlyBudget.Models
 {
@@ -21,14 +16,9 @@ namespace MonthlyBudget.Models
         public String DateCleared { get; set; }
         [Display(Name = "Check if cleared with the bank")]
         public bool Cleared { get; set; }
-
-
         public string UtilityComapny { get; set; }
-
         public string Category { get; set; }
-
         public string Description { get; set; }
-
         public string PayingBy { get; set; }
     }
 }

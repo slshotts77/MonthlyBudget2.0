@@ -15,7 +15,7 @@
             @Html.DisplayNameFor(model => model.UtilityCompanyId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.UtilityName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Website)
@@ -29,6 +29,18 @@
         <th>
             @Html.DisplayNameFor(model => model.PhoneNumber)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UtilityComapny)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PayingBy)
+        </th>
         <th></th>
     </tr>
 
@@ -38,7 +50,7 @@
             @Html.DisplayFor(modelItem => item.UtilityCompanyId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.UtilityName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Website)
@@ -53,9 +65,21 @@
             @Html.DisplayFor(modelItem => item.PhoneNumber)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.DisplayFor(modelItem => item.UtilityComapny)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PayingBy)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UtilityCompanyId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.UtilityCompanyId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.UtilityCompanyId })
         </td>
     </tr>
 }

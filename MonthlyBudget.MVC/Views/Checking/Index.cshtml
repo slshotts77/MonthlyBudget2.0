@@ -1,0 +1,87 @@
+﻿@model IEnumerable<MonthlyBudget.Models.CheckingListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckingId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckingName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MonthlyBill)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChargeDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateCleared)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cleared)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UtilityComapny)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PayingBy)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckingId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckingName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MonthlyBill)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChargeDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateCleared)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cleared)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UtilityComapny)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PayingBy)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CheckingId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CheckingId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CheckingId })
+        </td>
+    </tr>
+}
+
+</table>

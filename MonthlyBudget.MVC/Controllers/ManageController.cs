@@ -19,13 +19,11 @@ namespace MonthlyBudget.MVC.Controllers
         public ManageController()
         {
         }
-
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
         }
-
         public ApplicationSignInManager SignInManager
         {
             get
@@ -37,7 +35,6 @@ namespace MonthlyBudget.MVC.Controllers
                 _signInManager = value; 
             }
         }
-
         public ApplicationUserManager UserManager
         {
             get
@@ -49,8 +46,6 @@ namespace MonthlyBudget.MVC.Controllers
                 _userManager = value;
             }
         }
-
-        //
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
@@ -74,8 +69,6 @@ namespace MonthlyBudget.MVC.Controllers
             };
             return View(model);
         }
-
-        //
         // POST: /Manage/RemoveLogin
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -98,15 +91,11 @@ namespace MonthlyBudget.MVC.Controllers
             }
             return RedirectToAction("ManageLogins", new { Message = message });
         }
-
-        //
         // GET: /Manage/AddPhoneNumber
         public ActionResult AddPhoneNumber()
         {
             return View();
         }
-
-        //
         // POST: /Manage/AddPhoneNumber
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -129,8 +118,6 @@ namespace MonthlyBudget.MVC.Controllers
             }
             return RedirectToAction("VerifyPhoneNumber", new { PhoneNumber = model.Number });
         }
-
-        //
         // POST: /Manage/EnableTwoFactorAuthentication
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -144,8 +131,6 @@ namespace MonthlyBudget.MVC.Controllers
             }
             return RedirectToAction("Index", "Manage");
         }
-
-        //
         // POST: /Manage/DisableTwoFactorAuthentication
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -159,8 +144,6 @@ namespace MonthlyBudget.MVC.Controllers
             }
             return RedirectToAction("Index", "Manage");
         }
-
-
         // GET: /Manage/VerifyPhoneNumber
         public async Task<ActionResult> VerifyPhoneNumber(string phoneNumber)
         {
@@ -168,7 +151,6 @@ namespace MonthlyBudget.MVC.Controllers
             // Send an SMS through the SMS provider to verify the phone number
             return phoneNumber == null ? View("Error") : View(new VerifyPhoneNumberViewModel { PhoneNumber = phoneNumber });
         }
-
         //
         // POST: /Manage/VerifyPhoneNumber
         [HttpPost]
@@ -193,8 +175,7 @@ namespace MonthlyBudget.MVC.Controllers
             ModelState.AddModelError("", "Failed to verify phone");
             return View(model);
         }
-
-        //
+                //
         // POST: /Manage/RemovePhoneNumber
         [HttpPost]
         [ValidateAntiForgeryToken]

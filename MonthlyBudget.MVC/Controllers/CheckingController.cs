@@ -2,16 +2,11 @@
 using MonthlyBudget.Models;
 using MonthlyBudget.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Services.Description;
 
 namespace MonthlyBudget.MVC.Controllers
 {
     [Authorize]
-    [RoutePrefix("api/Entry")]
     public class CheckingController : Controller
     {
         // GET: Checking Index
@@ -29,13 +24,11 @@ namespace MonthlyBudget.MVC.Controllers
 
             return View(model);
         }
-
         //Get: Checking/Create
         public ActionResult Create()
         {
-            return View();
+            return View(new CheckingCreate());
         }
-
         //Post: Checking/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -54,7 +47,6 @@ namespace MonthlyBudget.MVC.Controllers
             ModelState.AddModelError("", "Entry could not be created.");
             return View(model);
         }
-
         //Get: Checking/Edit/{id}
         public ActionResult Edit(int id)
         {
@@ -67,11 +59,11 @@ namespace MonthlyBudget.MVC.Controllers
                     CheckingName = detail.CheckingName,
                     MonthlyBill = detail.MonthlyBill,
                     ChargeDate = detail.ChargeDate,
+                    DateCleared = detail.DateCleared,
                     Cleared = detail.Cleared
                 };
-         return View(model);
+            return View(model);
         }
-        
         //Post: Checking/Edit/{id}
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -96,7 +88,6 @@ namespace MonthlyBudget.MVC.Controllers
             ModelState.AddModelError("", "Your entry could not be updated.");
             return View(model);
         }
-
         //Get: Checking/Delete/{id}
         [ActionName("Delete")]
         public ActionResult Delete(int id)
@@ -106,7 +97,6 @@ namespace MonthlyBudget.MVC.Controllers
 
             return View(model);
         }
-
         //Post: Checking/Delete/{id}
         [HttpPost]
         [ActionName("Delete")]

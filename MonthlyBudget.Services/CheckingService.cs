@@ -30,7 +30,6 @@ namespace MonthlyBudget.Services
                     DateCleared = model.DateCleared,
                     Cleared = model.Cleared,
                     CreatedUtc = DateTimeOffset.Now,
-                    ModifiedUtc = DateTimeOffset.Now,
                     CategoryId = model.CategoryId,
                     UtilityCompanyId = model.UtilityCompanyId,
                     DescriptionId = model.DescriptionId,
@@ -56,26 +55,26 @@ namespace MonthlyBudget.Services
                         .Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
-                                    new CheckingListItem
-                                    {
-                                        CheckingId = e.CheckingId,
-                                        CheckingName = e.CheckingName,
-                                        MonthlyBill = e.MonthlyBill,
-                                        ChargeDate = e.ChargeDate,
-                                        DateCleared = e.DateCleared,
-                                        Cleared = e.Cleared,
-                                        CreatedUtc = e.CreatedUtc,
-                                        ModifiedUtc = e.ModifiedUtc,
-                                        UtilityComapny = e.UtilityCompany.UtilityCompanyId + " " + e.UtilityCompany.UtilityName,
-                                        Category = e.Category.CategoryId + " " + e.Category.CategoryName,
-                                        Description = e.Description.DescriptionId + " " + e.Description.DescriptionName,
-                                        PayingBy = e.PayingBy.PayById + " " + e.PayingBy.PayById
-                                    });
-                
+                                new CheckingListItem
+                                {
+                                    CheckingId = e.CheckingId,
+                                    CheckingName = e.CheckingName,
+                                    MonthlyBill = e.MonthlyBill,
+                                    ChargeDate = e.ChargeDate,
+                                    DateCleared = e.DateCleared,
+                                    Cleared = e.Cleared,
+
+                                    UtilityComapny = e.UtilityCompanyId + " " + e.UtilityCompany.UtilityName,
+
+                                    Category = e.CategoryId + " " + e.Category.CategoryName,
+
+                                    Description = e.DescriptionId + " " + e.Description.DescriptionName,
+
+                                    PayingBy = e.PayingById + " " + e.PayingBy.CashOrCard
+                                });
                 return query.ToArray();
             }
         }
-
 
         //Get By ID
         public CheckingDetail GetEntryById(int id)
@@ -105,7 +104,6 @@ namespace MonthlyBudget.Services
             }
         }
 
-
         //Edit Checking by ID
         public bool UpdateEntry(CheckingEdit model)
         {
@@ -116,13 +114,17 @@ namespace MonthlyBudget.Services
                         .Entries
                         .Single(e => e.CheckingId == model.CheckingId && e.OwnerId == _userId);
 
-                entity.CheckingId = model.CheckingId;
                 entity.CheckingName = model.CheckingName;
                 entity.MonthlyBill = model.MonthlyBill;
-                //entity.UtilityCompanyId = model.UtilityCompanyId;
-                //entity.DescriptionId = model.DescriptionId;
-                //entity.PayingById = model.PayingById;
-                
+                entity.ChargeDate = model.ChargeDate;
+                entity.DateCleared = model.DateCleared;
+                entity.Cleared = model.Cleared;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+                entity.UtilityCompanyId = model.UtilityCompanyId;
+                entity.CategoryId = model.CategoryId;
+                entity.DescriptionId = model.DescriptionId;
+                entity.PayingById = model.PayingById;
+
                 return ctx.SaveChanges() == 1;
             }
         }

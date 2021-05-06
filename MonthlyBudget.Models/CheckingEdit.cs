@@ -18,14 +18,8 @@ namespace MonthlyBudget.Models
         public String DateCleared { get; set; }
         [Display(Name = "Bank Note Cleared")]
         public bool Cleared { get; set; }
-
-
         public int UtilityCompanyId { get; set; }
-
         public int CategoryId { get; set; }
-
         public int DescriptionId { get; set; }
-
-        public int PayingById { get; set; }
-    }
+        public int PayingById { get; set; }    }
 }

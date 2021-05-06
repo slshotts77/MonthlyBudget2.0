@@ -1,32 +1,24 @@
-﻿using Microsoft.AspNet.Identity;
-using MonthlyBudget.Data;
-using MonthlyBudget.Models;
+﻿using MonthlyBudget.Models;
 using MonthlyBudget.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MonthlyBudget.MVC.Controllers
 {
     [Authorize]
-    public class CategoryController :  Controller
+    public class CategoryController : Controller
     {
-        // GET: Category
+        // GET: Category Index
         public ActionResult Index()
         {
             var service = new CategoryService();
             var model = service.GetCategories();
             return View(model);
         }
-
         //Get: Category/Create
         public ActionResult Create()
         {
-            return View();
+            return View(new CategoryCreate());  
         }
-
         //Post: Category/Create
         [HttpPost]
         public ActionResult Create(CategoryCreate model)
@@ -45,16 +37,14 @@ namespace MonthlyBudget.MVC.Controllers
             ModelState.AddModelError("", "Category could not be added");
             return View(model);
         }
-
-        //Get: Category/Detail
+        //Get: Category/Detail/{id}
         public ActionResult Details(int id)
         {
             var service = new CategoryService();
             var category = service.GetCategory(id);
             return View(category);
         }
-
-        //Get: Category/Edit
+        //Get: Category/Edit/{id}
         public ActionResult Edit(int id)
         {
             var service = new CategoryService();
@@ -62,8 +52,7 @@ namespace MonthlyBudget.MVC.Controllers
             var category = new CategoryEdit() { CategoryName = detail.CategoryName };
             return View(category);
         }
-
-        //Post: Category/Edit
+        //Post: Category/Edit/{id}
         [HttpPost]
         public ActionResult Edit(int id, CategoryEdit model)
         {
@@ -73,7 +62,6 @@ namespace MonthlyBudget.MVC.Controllers
 
             if (service.UpdateCategory(id, model))
             {
-
                 TempData["SaveResult"] = "Category Updated";
                 return RedirectToAction("Index");
             }
@@ -81,7 +69,6 @@ namespace MonthlyBudget.MVC.Controllers
             ModelState.AddModelError("", "Category could not be updated");
             return View(model);
         }
-
         //Get: Category/Delete
         public ActionResult Delete(int id)
         {
@@ -89,7 +76,6 @@ namespace MonthlyBudget.MVC.Controllers
             var category = service.GetCategory(id);
             return View(category);
         }
-
         //Post: Category/Delete
         [HttpPost]
         [ActionName("Delete")]
@@ -102,6 +88,7 @@ namespace MonthlyBudget.MVC.Controllers
                 TempData["SaveResult"] = "Category Deleted";
                 return RedirectToAction("Index");
             }
+
             ModelState.AddModelError("", "Category could not be updated");
             var model = service.GetCategory(id);
             return View(model);

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace MonthlyBudget.Models
 {
@@ -20,14 +15,9 @@ namespace MonthlyBudget.Models
         public string ExpirationDate { get; set; }
         [Display(Name = "3 digit code on the back of the card")]
         public int SecurityCode { get; set; }
-
-
         public string UtilityComapny { get; set; }
-
         public string Category { get; set; }
-
         public string Description { get; set; }
-
         public string PayingBy { get; set; }
     }
 }

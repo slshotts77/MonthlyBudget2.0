@@ -24,12 +24,29 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Checkin Account Registry", "Index", "Checkin Account Registry")</li>
+                        <li>@Html.ActionLink("Account Registry", "Index", "Checking")</li>
                     }
+
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Category", "Index", "Category")</li>
                     }
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Utility Company", "Index", "UtilityCompany")</li>
+                    }
+                    
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Description of Expense", "Index", "Description")</li>
+                    }
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Type of Expense", "Index", "PayingBy")</li>
+                    }
+
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
