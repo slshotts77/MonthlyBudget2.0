@@ -17,7 +17,7 @@ namespace MonthlyBudget.MVC.Controllers
         //Get: Category/Create
         public ActionResult Create()
         {
-            return View(new CategoryCreate());  
+            return View(new CategoryCreate());
         }
         //Post: Category/Create
         [HttpPost]
@@ -49,7 +49,10 @@ namespace MonthlyBudget.MVC.Controllers
         {
             var service = new CategoryService();
             var detail = service.GetCategory(id);
-            var category = new CategoryEdit() { CategoryName = detail.CategoryName };
+            var category = new CategoryEdit() 
+            { 
+                CategoryName = detail.CategoryName
+            };
             return View(category);
         }
         //Post: Category/Edit/{id}

@@ -22,12 +22,12 @@ namespace MonthlyBudget.MVC.Controllers
             var svc = CreateCheckingService();
             var model = svc.GetEntryById(id);
 
-            return View(model);
+            return View(new CheckingCreate());
         }
         //Get: Checking/Create
         public ActionResult Create()
         {
-            return View(new CheckingCreate());
+            return View();
         }
         //Post: Checking/Create
         [HttpPost]

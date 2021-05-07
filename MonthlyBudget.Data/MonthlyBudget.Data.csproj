@@ -62,6 +62,10 @@
     <Compile Include="Migrations\202105061732266_thrid rebuild.Designer.cs">
       <DependentUpon>202105061732266_thrid rebuild.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105070055144_trying to push to github.cs" />
+    <Compile Include="Migrations\202105070055144_trying to push to github.Designer.cs">
+      <DependentUpon>202105070055144_trying to push to github.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PayingBy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,6 +78,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105061732266_thrid rebuild.resx">
       <DependentUpon>202105061732266_thrid rebuild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105070055144_trying to push to github.resx">
+      <DependentUpon>202105070055144_trying to push to github.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

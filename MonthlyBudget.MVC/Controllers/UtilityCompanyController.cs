@@ -19,7 +19,7 @@ namespace MonthlyBudget.MVC.Controllers
             return View(model);
         }
 
-        //Get: Utility Company/Create/{id}
+        //Get: Utility Company/Create
         public ActionResult Create()
         {
             return View(new UtilityCompanyCreate());
@@ -52,13 +52,12 @@ namespace MonthlyBudget.MVC.Controllers
             return View(utilityName);
         }
 
-        //Get: Utility CompanyEdit/{id}
+        //Get: Utility Company/Edit/{id}
         public ActionResult Edit(int id)
         {
             var service = new UtilityCompanyService();
             var detail = service.GetUtilityCompany(id);
-            var model =
-                new UtilityCompanyEdit
+            var utilityCompany = new UtilityCompanyEdit()
                 {
                     UtilityCompanyId = detail.UtilityCompanyId,
                     UtilityName = detail.UtilityName,
@@ -67,7 +66,7 @@ namespace MonthlyBudget.MVC.Controllers
                     UserPassword = detail.UserPassword,
                     PhoneNumber = detail.PhoneNumber
                 };
-            return View(model);
+            return View(utilityCompany); 
         }
 
         //Post: Utility Company/Edit/{id}
@@ -109,6 +108,7 @@ namespace MonthlyBudget.MVC.Controllers
                 TempData["SaveResult"] = "Utility Company Deleted";
                 return RedirectToAction("Index");
             }
+
             ModelState.AddModelError("", "Utility Company could not be updated");
             var model = service.GetUtilityCompany(id);
             return View(model);
